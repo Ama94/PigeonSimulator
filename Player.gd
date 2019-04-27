@@ -11,7 +11,7 @@ var velocity = Vector2(0.0, 0.0)
 var force = Vector2(0.0, 0.0)
 var value:float = 100.0;
 var bullet_object =  load("res://bullet.tscn")
-
+var direction = Vector2(2.0, 0.0)
 var a = 2
 var b = "text"
 
@@ -31,22 +31,22 @@ func _physics_process(delta):
 	facing = Vector2( cos(orientation) , sin(orientation))
 	rotation = orientation
 	velocity *=0.95
-	position += velocity * delta
+	position += velocity * delta + direction
 	position.y += gravity
 	velocity += force * delta
 	if(value < 100.0):
 		value += 1
 	get_node("../cooldown").set_value(value)
-	self.texture = load("res://assets/pigeon_down.png")
+	self.texture = load("res://assets/pigeon_up.png")
 	update()
 	
 	pass
 func process_input():
 	if Input.is_action_pressed("ui_right"):
-		position += Vector2(5.0,0)
+		direction = Vector2(2.0,0)
 		get_node("../Pigeon").set_flip_h(false)
 	if Input.is_action_pressed("ui_left"):
-		position -= Vector2(5.0,0)
+		direction = Vector2(-2.0,0)
 		get_node("../Pigeon").set_flip_h(true)
 	if(Input.is_action_just_pressed("ui_up")):
 		position += Vector2(0,-15.0)
