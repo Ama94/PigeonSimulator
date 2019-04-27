@@ -25,3 +25,32 @@ script = ExtResource( 3 )
 position = Vector2( 161, 483 )
 texture = ExtResource( 4 )
 
+[node name="cooldown" type="ProgressBar" parent="."]
+margin_left = 821.111
+margin_top = 37.3232
+margin_right = 1001.11
+margin_bottom = 51.3232
+value = 100.0
+percent_visible = false
+
+[node name="fire cooldown" type="Label" parent="."]
+margin_left = 822.168
+margin_top = 14.8336
+margin_right = 993.168
+margin_bottom = 28.8336
+text = "fire cooldown"
+
+[node name="Points" type="Label" parent="."]
+margin_left = 822.0
+margin_top = 61.0
+margin_right = 993.0
+margin_bottom = 83.0
+text = "Points: 0"
+
+[node name="lives" type="Label" parent="."]
+margin_left = 26.5488
+margin_top = 14.346
+margin_right = 197.549
+margin_bottom = 36.346
+text = "Lifes * * *"
+
