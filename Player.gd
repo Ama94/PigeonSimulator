@@ -9,7 +9,7 @@ var radial_acceleration = 0.0
 var gravity:float = 0.4
 var velocity = Vector2(0.0, 0.0)
 var force = Vector2(0.0, 0.0)
-
+var value:float = 100.0;
 var bullet_object =  load("res://bullet.tscn")
 
 var a = 2
@@ -34,6 +34,9 @@ func _physics_process(delta):
 	position += velocity * delta
 	position.y += gravity
 	velocity += force * delta
+	if(value < 100.0):
+		value += 1
+	get_node("../cooldown").set_value(value)
 	self.texture = load("res://assets/pigeon_down.png")
 	update()
 	
@@ -49,7 +52,10 @@ func process_input():
 		position += Vector2(0,-15.0)
 #		self.texture = load("res://assets/pigeon_up.png")
 	if(Input.is_action_just_pressed("ui_select")):
-		spawn_bullet()
+		if(get_node("../cooldown").get_value() == 100):
+			get_node("../cooldown").set_value(0)
+			value = 0
+			spawn_bullet()
 #	pass
 func spawn_bullet():
 	var new_bullet = bullet_object.instance()
