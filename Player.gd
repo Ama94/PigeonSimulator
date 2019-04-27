@@ -22,6 +22,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+	
 func _physics_process(delta):
 	process_input()
 	radial_acceleration *= 0.93
@@ -32,7 +34,7 @@ func _physics_process(delta):
 	position += velocity * delta
 	position.y += gravity
 	velocity += force * delta
-	
+	self.texture = load("res://assets/pigeon_down.png")
 	update()
 	
 	pass
@@ -45,6 +47,7 @@ func process_input():
 		get_node("../Pigeon").set_flip_h(true)
 	if(Input.is_action_just_pressed("ui_up")):
 		position += Vector2(0,-15.0)
+#		self.texture = load("res://assets/pigeon_up.png")
 	if(Input.is_action_just_pressed("ui_select")):
 		spawn_bullet()
 #	pass
