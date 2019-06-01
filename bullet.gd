@@ -21,6 +21,5 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	print("OUT")
 	queue_free()
 

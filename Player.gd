@@ -45,7 +45,7 @@ func _physics_process(delta):
 	if(value < 100.0):
 		value += 1
 	get_node("../GUI/cooldown").set_value(value)
-	$Sprite.texture = load("res://assets/pigeon_up.png")
+#	$Sprite.texture = load("res://assets/pigeon_up.png")
 	update()
 	
 	pass
@@ -60,8 +60,12 @@ func process_input():
 #		$Sprite.set_flip_h(true)
 	if(Input.is_action_just_pressed("ui_up")):
 		apply_impulse(Vector2.ZERO,Vector2(0,-200))
+		$Sprite/animator.play("fly")
 #		position += Vector2(0,-15.0)
 #		self.texture = load("res://assets/pigeon_up.png")
+	else:
+		if $Timer.is_stopped ( ):
+			$Timer.start()
 	if(Input.is_action_just_pressed("ui_select")):
 		if(get_node("../GUI/cooldown").get_value() == 100):
 			get_node("../GUI/cooldown").set_value(0)
@@ -77,3 +81,7 @@ func spawn_bullet():
 	
 func _draw():
 	draw_line(Vector2(), velocity *1, Color(1,1,1),3)
+
+
+func _on_Timer_timeout():
+	$Sprite/animator.play("idle")

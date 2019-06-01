@@ -31,4 +31,11 @@ func _on_Area2D_body_entered(body):
 	if globals.life == 0:
 		print("0")
 		$"../GUI/life".visible = false
-		get_tree().change_scene("res://menu.tscn")
+		$"../Game_Over".visible = true
+		if $"../koniec".is_stopped ( ):
+			$"../koniec".start()
+		
+
+
+func _on_koniec_timeout():
+	get_tree().change_scene("res://menu.tscn")
