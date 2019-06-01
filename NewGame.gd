@@ -17,3 +17,5 @@ func _gui_input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			get_tree().change_scene("res://main.tscn")
+			globals.life = 3
+			globals.points = 0

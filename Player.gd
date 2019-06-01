@@ -35,7 +35,6 @@ func _physics_process(delta):
 #	position += velocity * delta + direction
 #	position.y += gravity
 #	velocity += force * delta
-	print(linear_velocity)
 	$Sprite.rotation = get_angle_to(linear_velocity+position)
 	
 	if(abs($Sprite.rotation_degrees) > 90):
