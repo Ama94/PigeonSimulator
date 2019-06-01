@@ -9,7 +9,7 @@ func _ready():
 func _physics_process(delta):
 	self.position += velocity * delta * speed
 	if(self.position.x < 0.1 * get_viewport_rect().size.x or self.position.x > 1.0 * get_viewport_rect().size.x):
-		if(speed < 15):
+		if(speed < 10):
 			speed += 0.5
 		velocity *= -1
 		get_node("Sprite").set_flip_h(false)
