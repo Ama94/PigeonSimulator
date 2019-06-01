@@ -56,10 +56,10 @@ margin_bottom = 28.8336
 text = "fire cooldown"
 
 [node name="Points" type="Label" parent="GUI"]
-margin_left = 822.0
-margin_top = 61.0
-margin_right = 993.0
-margin_bottom = 83.0
+margin_left = 258.0
+margin_top = 22.0
+margin_right = 429.0
+margin_bottom = 44.0
 text = "Points: 0"
 
 [node name="life" type="Sprite" parent="GUI"]
@@ -78,7 +78,7 @@ scale = Vector2( 0.844875, 0.756233 )
 texture = ExtResource( 4 )
 
 [node name="lives" type="Sprite" parent="GUI"]
-position = Vector2( 85.3186, 28.8089 )
+position = Vector2( 84.3186, 28.8089 )
 scale = Vector2( 0.756233, 0.778393 )
 texture = ExtResource( 5 )
 
@@ -103,5 +103,5 @@ rotation = 1.5708
 shape = SubResource( 3 )
 
 [node name="Hamster" parent="." instance=ExtResource( 6 )]
-position = Vector2( -141, 124 )
+position = Vector2( -71, 121 )
 

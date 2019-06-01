@@ -5,13 +5,13 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 39.9324
-height = 689.421
+height = 333.469
 
 [node name="Hamster" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]

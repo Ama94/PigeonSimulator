@@ -74,5 +74,6 @@ func spawn_bullet():
 	new_bullet.rotation = orientation
 	new_bullet.velocity.y = 40
 	$"../bullets".add_child(new_bullet)
+	
 func _draw():
 	draw_line(Vector2(), velocity *1, Color(1,1,1),3)
